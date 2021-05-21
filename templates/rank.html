@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% include 'header.html' %}
+
+{% block title %} Rank {% endblock title %}
+
+{% block body %}
+<div class="container">
+  <div class="row">
+    <div class="col md-12">
+      <div class="bg-light pt-1 px-3">
+        <h2><b>Students</b> List by Rank
+          <a href="/" class="btn btn-dark float-end mx-1">Home</a>
+        </h2>
+        <table class="table table-hover table-striped align-middle">
+          <tr class="text-center">
+            <th>Rank</th>
+            <th>Roll</th>
+            <th>Name</th>
+            <th>Marks in Maths</th>
+            <th>Marks in Physics</th>
+            <th>Marks in Chemistry</th>
+            <th>Total Marks</th>
+            <th>Percentage</th>
+          </tr>
+          {% for student in students %}
+          <tr class="text-center">
+            <td>{{student.rank}}</td>
+            <td>{{student.roll_no}}</td>
+            <td>{{student.name}}</td>
+            <td>{{student.marks_in_maths}}</td>
+            <td>{{student.marks_in_physics}}</td>
+            <td>{{student.marks_in_chemistry}}</td>
+            <td>{{student.total_marks}}</td>
+            <td>{{student.marks_percentage}}</td>
+          </tr>
+         {% endfor %}
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
